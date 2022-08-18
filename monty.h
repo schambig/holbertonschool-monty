@@ -75,7 +75,7 @@ char *split_str(char *str_to_split);
 
 /* helper functions */
 void is_digit(char *number);
-void delim_checker(char *str);
+int delim_checker(char *str);
 size_t dlistint_len(stack_t *h);
 
 /* opcode functions */
