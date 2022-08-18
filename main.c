@@ -28,8 +28,11 @@ int main(int argc, char **argv)
 	}
 	while (getline(&var.getl_info, &line_buf_size, var.fp_struct) != EOF)
 	{
+		/*if (*var.getl_info == '\n')*/
+			/*continue;*/
 		var.n_lines++;
-		delim_checker(var.getl_info);
+		if (delim_checker(var.getl_info) == 1)
+			continue;
 		split_str(var.getl_info);
 		execute_opcode(var.getl_info);
 	}
