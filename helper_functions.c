@@ -45,25 +45,20 @@ void is_digit(char *number)
  *
  * Return: void
  */
-void delim_checker(char *str)
+int delim_checker(char *str)
 {
-	int index, i;
+	int index = 0, flag = 0, len = 0;
 
-	index = 0;
+	len = strlen(str);
 	while (str[index] == ' ' || str[index] == '\t' || str[index] == '\n')
 	{
 		index++;
 	}
-	if (index != 0)
-	{
-		i = 0;
-		while (str[i + index] != '\0')
-		{
-			str[i] = str[i + index];
-			i++;
-		}
-		str[i] = '\0';
-	}
+
+	if (index == len)
+		flag = 1;
+
+	return (flag);
 }
 
 /**
