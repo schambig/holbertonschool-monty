@@ -1,6 +1,28 @@
 #include "monty.h"
 
 /**
+ * line_validator - check whitespaces
+ * @str: string for check
+ *
+ * Return: void
+ */
+int line_validator(char *str)
+{
+	int index = 0, flag = 0, len = 0;
+
+	len = strlen(str);
+	while (str[index] == ' ' || str[index] == '\t' || str[index] == '\n')
+	{
+		index++;
+	}
+
+	if (index == len)
+		flag = 1;
+
+	return (flag);
+}
+
+/**
  * is_digit - check is digit
  * @number: character for check
  *
@@ -37,28 +59,6 @@ void is_digit(char *number)
 			exit(EXIT_FAILURE);
 		}
 	}
-}
-
-/**
- * delim_checker - check whitespaces
- * @str: string for check
- *
- * Return: void
- */
-int delim_checker(char *str)
-{
-	int index = 0, flag = 0, len = 0;
-
-	len = strlen(str);
-	while (str[index] == ' ' || str[index] == '\t' || str[index] == '\n')
-	{
-		index++;
-	}
-
-	if (index == len)
-		flag = 1;
-
-	return (flag);
 }
 
 /**
