@@ -31,8 +31,8 @@ int main(int argc, char **argv)
 		var.n_lines++;
 		if (line_validator(var.getl_info) == 1)
 			continue;
-		split_str(var.getl_info);
-		execute_opcode(var.getl_info);
+		/*split_str(var.getl_info);*/
+		execute_opcode(split_str(var.getl_info));
 	}
 	free(var.getl_info);
 	handle_dlist_head(var.stack_head);
